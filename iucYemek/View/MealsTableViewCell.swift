@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Cosmos
 
 class MealsTableViewCell: UITableViewCell {
     
@@ -15,6 +16,15 @@ class MealsTableViewCell: UITableViewCell {
     @IBOutlet weak var soupMealLabel: UILabel!
     @IBOutlet weak var aperetiveLabel: UILabel!
     @IBOutlet weak var calorieLabel: UILabel!
+    @IBOutlet weak var dayNameLabel: UILabel!
+    
+    @IBOutlet weak var mainMealRating: CosmosView!
+    @IBOutlet weak var sideMealRating: CosmosView!
+    @IBOutlet weak var soupRating: CosmosView!
+    @IBOutlet weak var aperetiveRating: CosmosView!
+    
+    
+    
     
     
 

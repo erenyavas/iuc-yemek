@@ -20,9 +20,8 @@ class MealViewModel {
 //                self.coreDataViewModel.deleteAllMealsRatings()
                 
                 self.meals = mealList
-                self.coreDataViewModel.getAllMealsRatings()
-                let mealsRatings = self.coreDataViewModel.mealsRatings
-                self.addRatingsToMeals(mealsRatings: mealsRatings)
+                
+                self.updateAndAddRatings() 
                 
                 
                 
@@ -31,6 +30,12 @@ class MealViewModel {
                 completion(.failure(error))
             }
         }
+    }
+    
+    func updateAndAddRatings() {
+        self.coreDataViewModel.getAllMealsRatings()
+        let mealsRatings = self.coreDataViewModel.mealsRatings
+        self.addRatingsToMeals(mealsRatings: mealsRatings)
     }
 
     func numberOfMeals() -> Int {

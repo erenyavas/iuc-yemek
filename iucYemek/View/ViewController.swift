@@ -27,13 +27,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         mealsTableView.delegate = self
         mealsTableView.rowHeight = 430
         
-        loadDataTable(firstTime: true)
+        loadDataTable()
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        loadDataTable(firstTime: false)
+        
+        mealViewModel.updateAndAddRatings()
+        mealsTableView.reloadData()
     }
 
 
@@ -90,19 +92,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    func loadDataTable(firstTime: Bool){
+    func loadDataTable(){
         mealViewModel.fetchMeals() { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success:
                     self.mealsTableView.reloadData()
-                    if firstTime{
-                        // scroll to today cell, next cell or last cell
                         if let nextMealIndex = self.mealViewModel.indexOfNextMeal() {
                             let indexPath = IndexPath(row: nextMealIndex, section: 0)
                             self.mealsTableView.scrollToRow(at: indexPath, at: .top, animated: true)
                         }
-                    }
+                    
                 case .failure(let error):
                    print("Error: \(error)")
                }

@@ -25,6 +25,7 @@ class ApiService {
                    let mealList = try? JSONDecoder().decode([Meal].self, from: data)
                    
                    if let mealList = mealList {
+                       print("mealList")
                        completion(.success(mealList))
                    } else {
                        completion(.failure(.decodingError))

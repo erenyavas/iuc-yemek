@@ -34,8 +34,3 @@ The project is organized into several key components:
 <img src="https://github.com/erenyavas/iuc-yemek/assets/69438893/12c2191f-0f9a-4afe-ad5d-03f4539fee01" height="500">
 <img src="https://github.com/erenyavas/iuc-yemek/assets/69438893/21ee35cb-9c5d-4394-a639-8ccfe8032a81" height="500">
 <img src="https://github.com/erenyavas/iuc-yemek/assets/69438893/2cf7c2b8-c86e-41d5-a486-54d88bbed10e" height="500">
-
-
-## Contributing
-
-If you'd like to contribute to this project, please fork the repository and submit a pull request with your changes.
